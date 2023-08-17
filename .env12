@@ -1,0 +1,8 @@
+PORT=6001
+MONGO_CONNECTION_URL=mongodb+srv://nisha:KWtsaP5l1NeDwGfR@cluster0.imqxb0b.mongodb.net/family?retryWrites=true&w=majority
+
+ADMIN_EMAIL=admin@gmail.com
+ADMIN_PASSWORD=12345678
+
+mongodb+srv://familyvibesindia:349CkbHxzq3eeUtA@mixtiles.lpihfem.mongodb.net/mixtiles
+
