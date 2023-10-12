@@ -68,5 +68,8 @@ export const messages = {
     //otp
     otpSent: 'OTP sent successfully',
     otpNotMatch: 'Wrong OTP',
-    otpVerify: 'OTP verified successfully'
+    otpVerify: 'OTP verified successfully',
+    popupFetch : 'Popup data fetch',
+    popupNotFound : 'Data not found',
+    popupUpdate : "Data Updated"
 }
