@@ -696,3 +696,36 @@ export const testimonialUpdate = async (req, res) => {
         return res.status(statusCode.success).json(createSuccessResponse(messages.testimonialUpdate))
     } else return res.status(statusCode.error).json(createErrorResponse(messages.testimonialNotFound))
 }
+
+export const popupView = async (req, res) => {
+    try {
+        let details = await PopupSchema.findOne(); 
+        if (details) return res.status(statusCode.success).json(createSuccessResponse(messages.popupFetch, details))
+        else return res.status(statusCode.error).json(createErrorResponse(messages.popupNotFound))       
+          
+    } catch (err) {
+        res.status(statusCode.error).json(createErrorResponse(err?.message))
+    } 
+}
+
+export const popupEdit = async (req, res) => {
+    try {
+        const { line1, line2, line3, coupon, image1, image2  } = req.body;
+        let details = await PopupSchema.findOne(); 
+        if(!details) {
+            details = new PopupSchema();
+        }       
+        details['line1']     = line1
+        details['line2']     = line2
+        details['line3']     = line3
+        details['coupon']    = coupon
+        details['image1']    = image1
+        details['image2']    = image2
+        await details.save();
+        return res.status(statusCode.success).json(createSuccessResponse(messages.popupUpdate))
+            
+          
+    } catch (err) {
+        res.status(statusCode.error).json(createErrorResponse(err?.message))
+    } 
+}
