@@ -38,6 +38,9 @@ router.put('/faq/edit', validator(validationSchema.faqEditValidation), verifyAdm
 router.get('/discount/details', verifyAdminJWTToken, asyncTryCatchMiddleware(AdminController.discountView))
 router.put('/discount/edit', validator(validationSchema.discountEditValidation), verifyAdminJWTToken, asyncTryCatchMiddleware(AdminController.discountEdit))
 
+router.get('/popup/details', verifyAdminJWTToken, asyncTryCatchMiddleware(AdminController.popupView))
+router.put('/popup/edit', verifyAdminJWTToken, asyncTryCatchMiddleware(AdminController.popupEdit))
+
 router.get('/homepage/details', verifyAdminJWTToken, asyncTryCatchMiddleware(AdminController.homepageView))
 router.put('/homepage/edit', validator(validationSchema.homepageEditValidation), verifyAdminJWTToken, asyncTryCatchMiddleware(AdminController.homepageEdit))
 
